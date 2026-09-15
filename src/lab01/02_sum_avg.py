@@ -1,0 +1,8 @@
+a=input("a: ")
+b=input("b: ")
+print(f"a: {a}")
+print(f"b: {b}")
+a,b=float(a.replace(',','.')),float(b.replace(',','.'))
+s=round(a+b,2)
+av=round((a+b)/2,2)
+print(f"sum={s}; avg={av}")
