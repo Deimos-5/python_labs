@@ -1,4 +1,4 @@
-a=input()
+a=input('in: ')
 b=''
 z=0
 for i in range(len(a)):
@@ -16,4 +16,4 @@ for i in range(len(a)):
             b+=a[m]
             m=m+z
         break
-print(b+'.')
+print('out: '+b+'.')
