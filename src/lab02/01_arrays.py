@@ -63,4 +63,5 @@ a=input("Впишите одномерный массив с числами (д�
 if '[[' not in a:
     print(f'min_max: {min_max(a)}')
     print(f'unique_sorted: {unique_sorted(a)}')
-print(f'flatten: {flatten(a)}')
+else:
+    print(f'flatten: {flatten(a)}')

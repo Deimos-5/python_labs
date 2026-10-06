@@ -23,7 +23,7 @@ def matrix(mat_str):
                 raise ValueError('ValueError')
     return mat
 
-def transpose(mat_str: list[list[float | int]]) -> list[list]:
+def transpose(mat_str):
     mat=matrix(mat_str)
     if not mat:
         return []
@@ -35,7 +35,7 @@ def transpose(mat_str: list[list[float | int]]) -> list[list]:
         res.append(new_row)
     return res
 
-def row_sums(mat_str: list[list[float | int]]) -> list[float]:
+def row_sums(mat_str):
     mat=matrix(mat_str)
     if not mat:
         return []
@@ -47,7 +47,7 @@ def row_sums(mat_str: list[list[float | int]]) -> list[float]:
         res.append(s)
     return res
 
-def col_sums(mat_str: list[list[float | int]]) -> list[float]:
+def col_sums(mat_str):
     mat=matrix(mat_str)
     if not mat:
         return []
