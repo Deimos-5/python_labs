@@ -1,4 +1,4 @@
-def min_max(nums1: list[float | int]) -> tuple[float | int, float | int]:
+def min_max(nums1):
     nums1=nums1[1:-1].split(', ')
     nums=[]
     for x in nums1:
@@ -19,7 +19,7 @@ def min_max(nums1: list[float | int]) -> tuple[float | int, float | int]:
             maxi=num
     return mini, maxi
 
-def unique_sorted(nums1: list[float | int]) -> list[float | int]:
+def unique_sorted(nums1):
     nums1=nums1[1:-1].split(', ')
     nums=[]
     for x in nums1:
@@ -44,7 +44,7 @@ def unique_sorted(nums1: list[float | int]) -> list[float | int]:
         elems[j+1]=key
     return elems
 
-def flatten(nums1: list[list | tuple]) -> list:
+def flatten(nums1):
     s=nums1.replace('[','').replace(']','').replace('(','').replace(')','')
     nums1=s.split(', ')
     nums=[]
