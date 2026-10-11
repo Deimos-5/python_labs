@@ -1,27 +1,23 @@
-def matrix(mat_str):
-    if mat_str=='[]' or mat_str=='':
+def matrix(mat):
+    if not isinstance(mat,(tuple,list)):
+        raise TypeError('TypeError')
+    if not mat:
         return []
-    s=mat_str[1:-1]
-    rows1=s.split('], [')
-    if len(rows1)==1 and rows1==s:
-        rows1=s.split('), (')
-    mat=[]
-    for row in rows1:
-        row1=row.replace('[','').replace(']','').replace('(','').replace(')','')
-        if row1!='':
-            row_nums=[]
-            for x in row1.split(', '):
-                if '.' in x:
-                    row_nums.append(float(x))
-                else:
-                    row_nums.append(int(x))
-            mat.append(row_nums)
-    if len(mat)>0:
-        row_len=len(mat[0])
-        for r in mat:
-            if len(r)!=row_len:
-                raise ValueError('ValueError')
-    return mat
+    res=[]
+    for row in mat:
+        if not isinstance(row,(tuple,list)):
+            raise TypeError('TypeError')
+        new_row=[]
+        for x in row:
+            if not isinstance(x,(int,float)) or isinstance(x,bool):
+                raise TypeError('TypeError')
+            new_row.append(x)
+        res.append(new_row)
+    row_len=len(res[0])
+    for r in res:
+        if len(r)!=row_len:
+            raise ValueError('ValueError')
+    return res
 
 def transpose(mat_str):
     mat=matrix(mat_str)
@@ -57,7 +53,29 @@ def col_sums(mat_str):
             res[j]+=row[j]
     return res
 
-a=input("Впишите прямоугольную матрицу: ")
-print(f'transpose: {transpose(a)}')
-print(f'row_sums: {row_sums(a)}')
-print(f'col_sums: {col_sums(a)}')
+print("transpose")
+cases_transpose=[[[1, 2, 3]], [[1], [2], [3]], [[1, 2], [3, 4]], [], [[1, 2], [3]]]
+for case in cases_transpose:
+    try:
+        res=transpose(case)
+        print(f"{case} -> {res}")
+    except Exception as e:
+        print(f"{case} -> {type(e).__name__}")
+
+print("\nrow_sums")
+cases_row_sums=[[[1, 2, 3], [4, 5, 6]], [[-1, 1], [10, -10]], [[0, 0], [0, 0]], [[1, 2], [3]]]
+for case in cases_row_sums:
+    try:
+        res=row_sums(case)
+        print(f"{case} -> {res}")
+    except Exception as e:
+        print(f"{case} -> {type(e).__name__}")
+
+print("\ncol_sums")
+cases_col_sums=[[[1, 2, 3], [4, 5, 6]], [[-1, 1], [10, -10]], [[0, 0], [0, 0]], [[1, 2], [3]]]
+for case in cases_col_sums:
+    try:
+        res=col_sums(case)
+        print(f"{case} -> {res}")
+    except Exception as e:
+        print(f"{case} -> {type(e).__name__}")
