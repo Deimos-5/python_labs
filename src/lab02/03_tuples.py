@@ -43,10 +43,10 @@ def format_record(rec_tuple):
     return f'{fio_res}, гр. {group_res}, GPA {gpa_raw:.2f}'
 
 t1=("Иванов Иван Иванович", "БИВТ-25", 4.6)
-print(f"format_record: {format_record(t1)}")
+print(f"{t1} -> {format_record(t1)}")
 t2=("Петров Пётр", "ИКВО-12", 5.0)
-print(f"format_record: {format_record(t2)}")
+print(f"{t2} -> {format_record(t2)}")
 t3=("Петров Пётр Петрович", "ИКВО-12", 5.0)
-print(f"format_record: {format_record(t3)}")
+print(f"{t3} -> {format_record(t3)}")
 t4=("  сидорова   анна   сергеевна  ", "АВВ-01", 3.999)
-print(f"format_record: {format_record(t4)}")
+print(f"{t4} -> {format_record(t4)}")
