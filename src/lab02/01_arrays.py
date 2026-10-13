@@ -41,7 +41,7 @@ def flatten(matrix):
     nums=[]
     for row in matrix:
         if not isinstance(row,(list,tuple)):
-            raise TypeError("строка не строка строк матрицы")
+            raise TypeError("TypeError")
         for x in row:
             if not isinstance(x,(int,float)) or isinstance(x,bool):
                 raise TypeError("TypeError")
